@@ -1,0 +1,49 @@
+{
+  "name": "biport-test-token-rates-controller",
+  "version": "0.0.1",
+  "description": "A module for managing token rates",
+  "keywords": [
+    "biport",
+    "token",
+    "rates"
+  ],
+  "bugs": {
+    "url": "https://github.com/crossee/token-rates-controller/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/crossee/token-rates-controller.git"
+  },
+  "license": "MIT",
+  "packageManager": "yarn@1.22.17",
+  "author": "crossee",
+  "main": "./dist/index.js",
+  "files": [
+    "dist/"
+  ],
+  "scripts": {
+    "setup": "yarn install && yarn allow-scripts",
+    "prepublishOnly": "yarn build",
+    "build": "rm -rf dist && tsc --project .",
+    "build:watch": "yarn build --watch",
+    "build:link": "yarn build && cd dist && yarn link && rm -rf node_modules && cd ..",
+    "doc": "typedoc && touch docs/.nojekyll"
+  },
+  "dependencies": {
+    "eth-sig-util": "3.0.0",
+    "simple-test-observable-store": "^0.0.2"
+  },
+  "devDependencies": {
+    "@types/node": "^12.0.0",
+    "@typescript-eslint/eslint-plugin": "^4.8.2",
+    "@typescript-eslint/parser": "^4.8.2",
+    "eslint": "^7.29.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-import": "^2.23.4",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-prettier": "^3.4.0",
+    "prettier": "^2.3.2",
+    "prettier-plugin-packagejson": "^2.2.11",
+    "typescript": "^4.0.5"
+  }
+}
